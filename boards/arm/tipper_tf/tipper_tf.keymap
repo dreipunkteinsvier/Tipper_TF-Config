@@ -20,30 +20,19 @@
 };
 
 &caps_word {
-	continue-list = <UNDERSCORE MINUS>;
+	continue-list = <UNDERSCORE MINUS BSPC LSHFT RSHFT>;
 };
 
 / {
 	behaviors {
-		hm: homerow_mods {
-			compatible = "zmk,behavior-hold-tap";
-			label = "homerow mods";
-			#binding-cells = <2>;
-			tapping_term_ms = <100>;
-			quick_tap_ms = <200>;
-			global-quick-tap;
-			flavor = "tap-preferred";
-			bindings = <&kp>, <&kp>;
-		};
-
 		hl: homerow_mods_left {
 			compatible = "zmk,behavior-hold-tap";
 			label = "homerow mods left";
 			#binding-cells = <2>;
 			flavor = "tap-preferred";
-			tapping-term-ms = <100>;
-			quick-tap-ms = <200>;
-			global-quick-tap;
+			tapping-term-ms = <200>;
+			quick-tap-ms = <100>;
+			// global-quick-tap;
 			bindings = <&kp>, <&kp>;
 			// opposite side hand keys
 			hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
@@ -54,9 +43,9 @@
 			label = "homerow mods right";
 			#binding-cells = <2>;
 			flavor = "tap-preferred";
-			tapping-term-ms = <100>;
-			quick-tap-ms = <200>;
-			global-quick-tap;
+			tapping-term-ms = <200>;
+			quick-tap-ms = <100>;
+			// global-quick-tap;
 			bindings = <&kp>, <&kp>;
 			// opposite side hand keys
 			hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
@@ -85,9 +74,9 @@
 //         \ Set/Tab |  Nav/Ent  /     \  Num/Spc  | Fun/Bspc /
 //          ---------------------       --------------------
 			bindings = <
-			&kp Q		&kp W		&kp E		&kp R   	&kp T				&kp Y		&kp U		&kp I		&kp O			&kp P
-			&hl LGUI A	&hl LALT S	&hl LCTRL D	&hs LSHFT F	&hm RALT G			&hm RALT H	&hs RSHFT J	&hr RCTRL K	&hr LALT L		&hr LGUI SEMI
-			&kp Z		&hm RALT X	&kp C		&kp V   	&kp B				&kp N		&kp M		&kp COMMA	&hm RALT DOT	&kp FSLH
+			&kp Q		&kp W		&kp E		&kp R   	&kp T				&kp Y		&kp U		&kp I		&kp O		&kp P
+			&hl LGUI A	&hl LALT S	&hl LCTRL D	&hs LSHFT F	&hl RALT G			&hr RALT H	&hs RSHFT J	&hr RCTRL K	&hr LALT L	&hr LGUI SEMI
+			&kp Z		&kp X		&kp C		&kp V   	&kp B				&kp N		&kp M		&kp COMMA	&kp DOT		&kp FSLH
 												&lt 4 TAB	&lt 3 RET			&lt 1 SPACE	&lt 2 BSPC
 			>;
 		};
@@ -166,7 +155,7 @@
 //          ---------------------       --------------------
 			bindings = <
 			&kp MINUS		&kp N7		&kp N8			&kp N9			&kp N0				&none	&kp LC(LEFT)	&kp LC(DOWN)	&kp LC(UP)	&kp LC(RIGHT)
-			&hm LGUI EQUAL	&hm LALT N4	&hm LCTRL N5	&hm LSHFT N6	&kp SQT				&none	&hm RSHFT LEFT	&hm RCTRL DOWN	&hm LALT UP	&hm LGUI LEFT
+			&hl LGUI EQUAL	&hl LALT N4	&hl LCTRL N5	&hl LSHFT N6	&kp SQT				&none	&hr RSHFT LEFT	&hr RCTRL DOWN	&hr LALT UP	&hr LGUI LEFT
 			&kp GRAVE		&kp N1		&kp N2			&kp N3			&kp BSLH			&none	&kp HOME		&kp PG_DN		&kp PG_UP	&kp END
 														&none			&kp RET				&none					&none
 			>;
