@@ -13,7 +13,8 @@
 #include <logging/log.h>
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
-LV_IMG_DECLARE(tipperlogo);
+LV_IMG_DECLARE(clacktales_logo);
+// LV_IMG_DECLARE(tipperlogo);
 
 #if IS_ENABLED(CONFIG_CUSTOM_WIDGET_BATTERY_STATUS)
 /* static struct zmk_widget_battery_status battery_status_widget; */
@@ -93,7 +94,8 @@ lv_obj_t *zmk_display_status_screen() {
     
     lv_obj_t * tipperlogo_icon;
     tipperlogo_icon = lv_img_create(screen, NULL);
-    lv_img_set_src(tipperlogo_icon, &tipperlogo);
+    lv_img_set_src(tipperlogo_icon, &clacktales_logo);
+    // lv_img_set_src(tipperlogo_icon, &tipperlogo);
     lv_obj_align(tipperlogo_icon, NULL, LV_ALIGN_IN_TOP_MID, 0,0);
     
     return screen;
